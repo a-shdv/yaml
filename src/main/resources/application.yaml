@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: demo
+myapp:
+  my-app-props:
+    - name: a
+      version: 0.0.1
+    - name: b
+      version: 0.0.2
+    - name: c
+      version: 0.0.3
