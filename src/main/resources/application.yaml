@@ -1,11 +1,37 @@
-spring:
-  application:
-    name: demo
-myapp:
-  my-app-props:
-    - name: a
-      version: 0.0.1
-    - name: b
-      version: 0.0.2
-    - name: c
-      version: 0.0.3
+plc:
+  connection:
+    ip: 10.221.127.125 # 10.221.127.3
+    port: 102
+    rack: 0 # 2
+    slot: 1 # 0
+  read:
+    - name: encoder
+      db: 2
+      offset: 0
+      quantity: 4
+    - name: cutter-length
+      db: 2
+      offset: 6
+      quantity: 4
+    - name: counting-start
+      db: 2
+      offset: 10
+      quantity: 4
+  write:
+    - name: canvas
+      db: 15
+      offset: 0
+      bits: [0, 1, 2]
+    - name: blow
+      db: 16 # 0
+      offset: 0
+      bits: [ 0, 1, 2 ]
+    - name: light
+      db: 14
+      offset: 0
+      bits: [ 0, 1, 2 ]
+    - name: error-report
+      db: 17
+      offset: 0
+  total-distance: 1500
+  error-report-size: 11 # ???? 5 ???????, ?? 5*2+1=11; ???? 10 ??????? ?? 10*2+1=21;
